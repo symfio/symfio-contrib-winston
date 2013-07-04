@@ -1,7 +1,7 @@
 {
   "name": "symfio-contrib-winston"
 , "version": "2.0.0-beta.2"
-, "description": "Logger plugin."
+, "description": "Winston plugin for Symfio."
 , "keywords": ["symfio-plugin", "symfio-contrib", "winston", "logger"]
 , "homepage": "http://symf.io/plugins/contrib-winston"
 , "bugs": {
@@ -25,7 +25,7 @@
   }
 , "devDependencies": {
     "symfio": "~2.0"
-  , "chai": "~1.6"
+  , "chai": "~1.7"
   , "chai-as-promised": "~3.3"
   , "grunt": "~0.4"
   , "grunt-simple-mocha": "~0.4"

@@ -1,6 +1,5 @@
 winston = require "winston"
 symfio = require "symfio"
-plugin = require ".."
 chai = require "chai"
 
 
@@ -11,8 +10,7 @@ describe "contrib-winston plugin", ->
   container = symfio "test", __dirname
 
   before (callback) ->
-    container.use plugin
-    container.load().should.notify callback
+    container.inject(require "..").should.notify callback
 
   it "should be configurable", (callback) ->
     container.get([
