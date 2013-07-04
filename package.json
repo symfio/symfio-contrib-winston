@@ -1,0 +1,40 @@
+{
+  "name": "symfio-contrib-winston"
+, "version": "2.0.0-beta"
+, "description": "Logger plugin."
+, "keywords": ["symfio-plugin", "symfio-contrib", "winston", "logger"]
+, "homepage": "http://symf.io/plugins/contrib-winston"
+, "bugs": {
+    "url": "https://github.com/symfio/contrib-winston/issues"
+  , "email": "webmaster@rithis.com"
+  }
+, "author": {
+    "name": "Vyacheslav Slinko"
+  , "email": "vyacheslav.slinko@gmail.com"
+  }
+, "main": "lib/winston"
+, "repository": {
+    "type": "git"
+  , "url": "git://github.com/symfio/contrib-winston.git"
+  }
+, "scripts": {
+    "test": "npm install && grunt"
+  }
+, "dependencies": {
+    "winston": "~0.7"
+  }
+, "devDependencies": {
+    "symfio": "~2.0"
+  , "chai": "~1.6"
+  , "chai-as-promised": "~3.3"
+  , "grunt": "~0.4"
+  , "grunt-simple-mocha": "~0.4"
+  , "grunt-coffeelint": "~0.0"
+  }
+, "engines": {
+    "node": ">=0.8"
+  , "npm": ">=1.2"
+  , "coffee-script": "~1.6"
+  , "grunt-cli": "~0.4"
+  }
+}
