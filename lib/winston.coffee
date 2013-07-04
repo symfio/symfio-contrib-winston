@@ -40,6 +40,8 @@ module.exports = (container) ->
         [consoleLogger]
       when "production"
         [fileLogger]
+      when "test"
+        []
       else
         [consoleLogger, fileLogger]
 
