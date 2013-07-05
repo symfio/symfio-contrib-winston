@@ -52,8 +52,8 @@ module.exports = (container) ->
 
   container.set "logger",
     (winston, loggerTransports, loggerLevels, loggerColors) ->
-      winston.addColors loggerColors
-
-      logger = new winston.Logger transports: loggerTransports
-      logger.setLevels loggerLevels
-      logger
+      new winston.Logger
+        transports: loggerTransports
+        levels: loggerLevels
+        stripColors: true
+        colors: loggerColors
