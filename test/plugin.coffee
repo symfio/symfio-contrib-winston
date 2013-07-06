@@ -1,18 +1,15 @@
 winston = require "winston"
-symfio = require "symfio"
-chai = require "chai"
+suite = require "symfio-suite"
 
 
 describe "contrib-winston()", ->
-  chai.use require "chai-as-promised"
-  chai.should()
+  it = suite.plugin [
+    require ".."
+  ]
 
-  container = symfio "test", __dirname
+  it "should be configurable", (container) ->
+    container.set "env", "development"
 
-  before (callback) ->
-    container.inject(require "..").should.notify callback
-
-  it "should be configurable", (callback) ->
     container.get([
       "loggerLevel"
       "loggerFile"
@@ -35,4 +32,3 @@ describe "contrib-winston()", ->
       result[4].should.have.length 1
       result[5].should.equal winston.config.npm.levels
       result[6].should.equal winston.config.npm.colors
-    .should.notify callback
