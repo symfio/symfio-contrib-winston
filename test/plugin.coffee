@@ -3,7 +3,7 @@ symfio = require "symfio"
 chai = require "chai"
 
 
-describe "contrib-winston plugin", ->
+describe "contrib-winston()", ->
   chai.use require "chai-as-promised"
   chai.should()
 
