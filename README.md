@@ -2,8 +2,7 @@
 
 > Winston plugin for Symfio.
 
-[![Build Status](http://teamcity.rithis.com/httpAuth/app/rest/builds/buildType:id:bt20,branch:master/statusIcon?guest=1)](http://teamcity.rithis.com/viewType.html?buildTypeId=bt20&guest=1)
-[![Dependency Status](https://gemnasium.com/symfio/symfio-contrib-winston.png)](https://gemnasium.com/symfio/symfio-contrib-winston)
+[![Build Status](https://travis-ci.org/symfio/symfio-contrib-winston.png?branch=master)](https://travis-ci.org/symfio/symfio-contrib-winston) [![Dependency Status](https://gemnasium.com/symfio/symfio-contrib-winston.png)](https://gemnasium.com/symfio/symfio-contrib-winston)
 
 ## Usage
 
