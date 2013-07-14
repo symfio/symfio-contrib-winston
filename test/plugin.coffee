@@ -24,9 +24,9 @@ describe "contrib-winston()", ->
         File: sandbox.spy()
       Logger: sandbox.spy()
 
-  describe "container.require path", ->
-    it "should require path", (required) ->
-      required("path").should.equal "path"
+  describe "container.set path", ->
+    it "should be setted", (setted) ->
+      setted "path"
 
   describe "container.set winston", ->
     it "should be setted", (setted) ->
