@@ -1,7 +1,10 @@
 module.exports = (container) ->
   container.require require
   container.require "path"
-  container.require "winston"
+
+  # manual require without logger to prevent cyclic dependency winston<->logger
+  container.set "winston", ->
+    require "winston"
 
   container.unless "loggerLevel", (env) ->
     switch env
