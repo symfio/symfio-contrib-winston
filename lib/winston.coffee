@@ -1,7 +1,8 @@
-path = require "path"
-
-
 module.exports = (container) ->
+  container.require require
+  container.require "path"
+  container.require "winston"
+
   container.unless "loggerLevel", (env) ->
     switch env
       when "development"
@@ -11,7 +12,7 @@ module.exports = (container) ->
       else
         "info"
 
-  container.unless "loggerFile", (name, applicationDirectory) ->
+  container.unless "loggerFile", (name, path, applicationDirectory) ->
     path.join applicationDirectory, "#{name}.log"
 
   container.unless "consoleLoggerConfiguration", (env, loggerLevel) ->
@@ -40,9 +41,6 @@ module.exports = (container) ->
 
   container.unless "loggerColors", (winston) ->
     winston.config.npm.colors
-
-  container.set "winston", ->
-    require "winston"
 
   container.set "consoleLogger", (winston, consoleLoggerConfiguration) ->
     new winston.transports.Console consoleLoggerConfiguration

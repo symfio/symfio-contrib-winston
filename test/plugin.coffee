@@ -4,15 +4,33 @@ suite = require "symfio-suite"
 describe "contrib-winston()", ->
   it = suite.plugin (container) ->
     container.inject ["suite/container"], require ".."
+    container.require "path"
     container.set "applicationDirectory", "/"
     container.set "loggerLevel", "silly"
     container.set "loggerFile", "/test.log"
+    container.set "consoleLoggerConfiguration", "consoleConfiguration"
+    container.set "fileLoggerConfiguration", "fileConfiguration"
     container.set "consoleLogger", "console"
     container.set "fileLogger", "file"
-    container.set "winston", ->
+    container.set "loggerTransports", ["file"]
+    container.set "loggerLevels", ["debug"]
+    container.set "loggerColors", debug: "red"
+    container.set "winston", (sandbox) ->
       config: npm:
         levels: "levels"
         colors: "colors"
+      transports:
+        Console: sandbox.spy()
+        File: sandbox.spy()
+      Logger: sandbox.spy()
+
+  describe "container.require path", ->
+    it "should require path", (required) ->
+      required("path").should.equal "path"
+
+  describe "container.require winston", ->
+    it "should require winston", (required) ->
+      required("winston").should.equal "winston"
 
   describe "container.unless loggerLevel", ->
     it "should be silly on development env", (unlessed) ->
@@ -114,3 +132,28 @@ describe "contrib-winston()", ->
       factory = unlessed "loggerColors"
       factory().then (loggerColors) ->
         loggerColors.should.equal factory.dependencies.winston.config.npm.colors
+
+  describe "container.set consoleLogger", ->
+    it "should create transport", (setted, winston) ->
+      factory = setted "consoleLogger"
+      factory().then ->
+        winston.transports.Console.should.be.calledWithNew
+        winston.transports.Console.should.be.calledWith "consoleConfiguration"
+
+  describe "container.set fileLogger", ->
+    it "should create transport", (setted, winston) ->
+      factory = setted "fileLogger"
+      factory().then ->
+        winston.transports.File.should.be.calledWithNew
+        winston.transports.File.should.be.calledWith "fileConfiguration"
+
+  describe "container.set logger", ->
+    it "should create transport", (setted, winston) ->
+      factory = setted "logger"
+      factory().then ->
+        winston.Logger.should.be.calledWithNew
+        winston.Logger.should.be.calledWith
+          transports: ["file"]
+          levels: ["debug"]
+          stripColors: true
+          colors: debug: "red"
