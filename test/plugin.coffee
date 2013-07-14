@@ -28,9 +28,9 @@ describe "contrib-winston()", ->
     it "should require path", (required) ->
       required("path").should.equal "path"
 
-  describe "container.require winston", ->
-    it "should require winston", (required) ->
-      required("winston").should.equal "winston"
+  describe "container.set winston", ->
+    it "should be setted", (setted) ->
+      setted "winston"
 
   describe "container.unless loggerLevel", ->
     it "should be silly on development env", (unlessed) ->
