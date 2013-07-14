@@ -1,6 +1,6 @@
 {
   "name": "symfio-contrib-winston"
-, "version": "2.0.7"
+, "version": "2.0.8"
 , "description": "Winston plugin for Symfio."
 , "keywords": ["symfio-plugin", "symfio-contrib", "winston", "logger"]
 , "homepage": "http://symf.io/plugins/contrib-winston"
