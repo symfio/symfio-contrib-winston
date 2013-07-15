@@ -2,7 +2,10 @@
 
 > Winston plugin for Symfio.
 
-[![Build Status](https://travis-ci.org/symfio/symfio-contrib-winston.png?branch=master)](https://travis-ci.org/symfio/symfio-contrib-winston) [![Dependency Status](https://gemnasium.com/symfio/symfio-contrib-winston.png)](https://gemnasium.com/symfio/symfio-contrib-winston)
+[![Build Status](https://travis-ci.org/symfio/symfio-contrib-winston.png?branch=master)](https://travis-ci.org/symfio/symfio-contrib-winston)
+[![Coverage Status](https://coveralls.io/repos/symfio/symfio-contrib-winston/badge.png?branch=master)](https://coveralls.io/r/symfio/symfio-contrib-winston?branch=master)
+[![Dependency Status](https://gemnasium.com/symfio/symfio-contrib-winston.png)](https://gemnasium.com/symfio/symfio-contrib-winston)
+[![NPM version](https://badge.fury.io/js/symfio-contrib-winston.png)](http://badge.fury.io/js/symfio-contrib-winston)
 
 ## Usage
 
